@@ -1,6 +1,7 @@
 package com.stackroute.springbootkafkaproducer.resource;
 
 import com.stackroute.springbootkafkaproducer.model.User;
+import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ public class UserResource {
 
     @Autowired
     private KafkaTemplate<String, User> kafkaTemplate;
-    private  static final String TOPIC ="Test";
+    private  static final String TOPIC ="test2";
 
 
     @PostMapping("user")
@@ -27,7 +28,7 @@ public class UserResource {
 //    @GetMapping("/publish/{name}")
 //    public String post(@PathVariable("name") final String name) {
 //
-//        kafkaTemplate.send(TOPIC,new User(name,"Technology","10000"));
+//        kafkaTemplate.send(TOPIC,name);
 //        return name +" Published Successfully";
 //
 //    }
